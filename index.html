@@ -106,11 +106,21 @@
             display: none;
         }
     </style>
+    <script>
+        const linkDiretoEstrelas = "https://search.google.com/local/writereview?placeid=ChIJ0YLSJONqz5QRVDtKuKDPWSU";
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const isAndroid = /android/i.test(userAgent);
+
+        // Se for Android, redireciona direto para as estrelas do Google Maps
+        if (isAndroid) {
+            window.location.href = linkDiretoEstrelas;
+        }
+    </script>
 </head>
 <body>
 
     <div class="card" id="conteudo">
-        <!-- LOGO LOCAL -->
+        <!-- LOGO DO RESTAURANTE -->
         <div class="logo-container">
             <img src="logo.png" alt="Camponesa O Parmegiana" class="logo">
         </div>
@@ -143,6 +153,13 @@
             Seguir no Instagram
         </a>
     </div>
+
+    <script>
+        // Oculta o conteúdo do cartão no Android para a transição do redirecionamento ser limpa
+        if (isAndroid) {
+            document.getElementById('conteudo').classList.add('hidden');
+        }
+    </script>
 
 </body>
 </html>
