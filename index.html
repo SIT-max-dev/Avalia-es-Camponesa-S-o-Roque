@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalie sua experiência</title>
+    <title>Camponesa - Avalie sua experiência</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,8 +12,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         body {
-            background-color: #f4f4f6;
-            color: #1f2937;
+            background: linear-gradient(135deg, #8B1E1E 0%, #5A1212 100%);
+            color: #2D2D2D;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,33 +26,47 @@
             max-width: 400px;
             padding: 32px 24px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
+        .logo-container {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
         .stars {
-            font-size: 32px;
-            color: #fbbc04;
-            margin-bottom: 12px;
+            font-size: 28px;
+            color: #D97706;
+            margin-bottom: 8px;
             letter-spacing: 4px;
         }
         h1 {
             font-size: 22px;
             font-weight: 700;
-            margin-bottom: 10px;
-            color: #111827;
+            margin-bottom: 8px;
+            color: #1A1A1A;
         }
         p {
-            font-size: 15px;
-            color: #4b5563;
+            font-size: 14px;
+            color: #555555;
             line-height: 1.5;
             margin-bottom: 24px;
         }
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 100%;
-            padding: 16px;
+            padding: 15px 16px;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             text-decoration: none;
             margin-bottom: 12px;
@@ -62,66 +76,73 @@
             transform: scale(0.98);
         }
         .btn-primary {
-            background-color: #1a73e8;
+            background-color: #A31D1D;
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.25);
+            box-shadow: 0 4px 12px rgba(163, 29, 29, 0.3);
         }
         .btn-secondary {
-            background-color: #f1f3f4;
-            color: #3c4043;
-            border: 1px solid #dadce0;
+            background-color: #F3F4F6;
+            color: #374151;
+            border: 1px solid #E5E7EB;
+        }
+        .divider {
+            height: 1px;
+            background-color: #E5E7EB;
+            margin: 20px 0;
+        }
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(220, 39, 67, 0.25);
+            margin-bottom: 0;
         }
         .hint {
             font-size: 12px;
-            color: #6b7280;
-            margin-top: 16px;
+            color: #777777;
+            margin-top: 14px;
+            margin-bottom: 0;
         }
-        /* Esconde a interface visual inicialmente enquanto verifica se é Android */
         .hidden {
             display: none;
         }
     </style>
-    <script>
-        // Links já configurados com o seu Place ID
-        const linkDiretoEstrelas = "https://search.google.com/local/writereview?placeid=ChIJ0YLSJONqz5QRVDtKuKDPWSU";
-        const linkAppMaps = "https://www.google.com/maps/search/?api=1&query=Restaurante&query_place_id=ChIJ0YLSJONqz5QRVDtKuKDPWSU";
-
-        // Detecta o sistema operacional do celular
-        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        const isAndroid = /android/i.test(userAgent);
-
-        // Se for Android, redireciona na hora (0 segundos) direto para as estrelas
-        if (isAndroid) {
-            window.location.replace(linkDiretoEstrelas);
-        }
-    </script>
 </head>
 <body>
 
     <div class="card" id="conteudo">
+        <!-- LOGO LOCAL -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Camponesa O Parmegiana" class="logo">
+        </div>
+
         <div class="stars">★★★★★</div>
-        <h1>Gostou do atendimento?</h1>
+        <h1>Gostou da nossa casa?</h1>
         <p>Sua avaliação leva menos de 10 segundos e ajuda muito a nossa equipe!</p>
 
-        <!-- Botão 1: Ideal para iPhone com app Google Maps instalado -->
+        <!-- Botão 1: App Google Maps -->
         <a href="https://www.google.com/maps/search/?api=1&query=Restaurante&query_place_id=ChIJ0YLSJONqz5QRVDtKuKDPWSU" class="btn btn-primary">
-            Abrir no App Google Maps
+            Avaliar no App Google Maps
         </a>
 
-        <!-- Botão 2: Ideal para quem já tem conta Google logada no Safari -->
+        <!-- Botão 2: Navegador direto -->
         <a href="https://search.google.com/local/writereview?placeid=ChIJ0YLSJONqz5QRVDtKuKDPWSU" class="btn btn-secondary">
-            Avaliar direto pelo Navegador
+            Avaliar pelo Navegador
         </a>
 
-        <p class="hint">No app do Maps, basta tocar na aba <strong>Avaliações</strong> para deixar suas estrelas.</p>
-    </div>
+        <p class="hint">No app do Maps, toque na aba <strong>Avaliações</strong> para dar suas estrelas.</p>
 
-    <script>
-        // Garante que no Android a tela nem pisque antes de redirecionar
-        if (isAndroid) {
-            document.getElementById('conteudo').classList.add('hidden');
-        }
-    </script>
+        <div class="divider"></div>
+
+        <!-- Botão 3: Instagram -->
+        <a href="https://www.instagram.com/restaurantecamponesa/" target="_blank" class="btn btn-instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Seguir no Instagram
+        </a>
+    </div>
 
 </body>
 </html>
